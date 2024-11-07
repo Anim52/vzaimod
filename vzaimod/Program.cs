@@ -1,4 +1,5 @@
-﻿using vzaimod.Оружие;
+﻿using System.Threading.Channels;
+using vzaimod.Оружие;
 using vzaimod.Персонажи;
 using vzaimod.Характеристики;
 
@@ -112,9 +113,10 @@ namespace vzaimod
                 }
                 break; 
             }
-            
 
 
+            Console.WriteLine("gg");
         }
+     
     }
 }
