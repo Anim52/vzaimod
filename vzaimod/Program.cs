@@ -115,7 +115,7 @@ namespace vzaimod
             }
 
 
-            Console.WriteLine("gg");
+           
         }
      
     }
