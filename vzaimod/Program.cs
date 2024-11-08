@@ -12,7 +12,7 @@ namespace vzaimod
            
             Axe axe = new Axe() {Title = "Боевой топор",Damage = 50, StaminaToAttack = 15, DefenseChange = 10};
             Bow bow = new Bow() {Title = "Лук",Damage = 20,StaminaToAttack = 10, DefenseChange = 0};
-            Sword sword = new Sword() {Title = "Меч",Damage = 17,StaminaToAttack = 15,DefenseChange = 5 };
+            Sword sword = new Sword() {Title = "Меч",Damage = 117,StaminaToAttack = 15,DefenseChange = 5 };
 
             FireBoll fireBoll = new FireBoll() {Title = "Огненный шар",Damage = 25,DefenseChange = 5, EnergeCost = 10};
             Heal heal = new Heal() {Title = "Лечение",Damage = 5,DefenseChange = 1, EnergeCost = 5 };
@@ -26,14 +26,14 @@ namespace vzaimod
 
             while (true)
             {
-                while (true)
-                {
+                
+                
                     while (true)
                     {
                         Console.WriteLine("Желаете просмотреть персонажей их оружие и способности?");
                         Console.WriteLine("Если да то напишите Да ели нет Нет");
                         string yesOrNo = Console.ReadLine();
-                        if (yesOrNo == "Да")
+                        if (yesOrNo == "Да" || yesOrNo =="да")
                         {
 
                             Console.WriteLine("Чтобы просмотреть персонажей нажмитe P");
@@ -56,13 +56,21 @@ namespace vzaimod
                             ConsoleKeyInfo c = Console.ReadKey(intercept: true);
                             if (c.Key == ConsoleKey.C)
                             {
-
+                                fireBoll.Info();
+                                heal.Info();
+                                iceBoll.Info();
                             }
+                            break;
                         }
+                        if(yesOrNo == "Нет" || yesOrNo == "нет")
+                        {
+                        break;
+                        }
+                        
                     }
-                    
-                    
-                }
+                Console.WriteLine($"Нажмите любую клавишу чтобы продолжить");
+                Console.ReadKey();
+                    Console.Clear();
                 Console.WriteLine("Добро пожаловать!");
                 Console.WriteLine("Нажмите F чтобы начать игру");
 
