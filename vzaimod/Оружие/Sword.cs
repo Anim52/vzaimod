@@ -22,5 +22,9 @@ namespace vzaimod.Оружие
             target.Health -= Damage;
             Console.WriteLine($"{attacker.Name} наносит {Damage} урона {target.Name}");
         }
+        public void info()
+        {
+            Console.WriteLine($"Название:{Title},Урон:{Damage},Использует стамины{StaminaToAttack},Шанс заблокировать удар:{DefenseChange}");
+        }
     }
 }

@@ -26,6 +26,35 @@ namespace vzaimod
 
             while (true)
             {
+                while (true)
+                {
+                    while (true)
+                    {
+                        Console.WriteLine("Желаете просмотреть персонажей их оружие и способности?");
+                        Console.WriteLine("Если да то напишите Да ели нет Нет");
+                        string yesOrNo = Console.ReadLine();
+                        if (yesOrNo == "Да")
+                        {
+
+                            Console.WriteLine("Чтобы просмотреть персонажей нажмитe P");
+                            ConsoleKeyInfo p = Console.ReadKey(intercept: true);
+                            if (p.Key == ConsoleKey.P)
+                            {
+                                human.Info();
+                                troll.Info();
+                                warevolf.Info();
+                            }
+                            Console.WriteLine("Чтобы просмотреть оружие нажмитe O");
+                            ConsoleKeyInfo o = Console.ReadKey(intercept: true);
+                            if(o.Key == ConsoleKey.O)
+                            {
+                                axe.info();
+                            }
+                        }
+                    }
+                    
+                    
+                }
                 Console.WriteLine("Добро пожаловать!");
                 Console.WriteLine("Нажмите F чтобы начать игру");
 
