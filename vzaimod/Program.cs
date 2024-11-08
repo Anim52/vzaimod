@@ -48,6 +48,7 @@ namespace vzaimod
                             if (one == "1")
                             {
                                 human.WeaponsAttack(troll);
+                                troll.Defense(human);
                                 human.Info();
                                 troll.Info();
                                 if (troll.Health <= 0)
@@ -57,6 +58,7 @@ namespace vzaimod
                             }
                             if(one == "2")
                             {
+                                troll.Defense(human);
                                 human.AbilityAttack(troll);
                                 human.Info();
                                 troll.Info();
@@ -75,8 +77,9 @@ namespace vzaimod
                             string two = Console.ReadLine();
                             if (two == "1")
                             {
+                                human.Defense(troll);
                                 troll.WeaponsAttack(human);
-                                human.Info();
+                                human.Info() ;
                                 troll.Info();
                                 if (human.Health <= 0)
                                 {
@@ -85,6 +88,7 @@ namespace vzaimod
                             }
                             if (two == "2")
                             {
+                                human.Defense(troll);
                                 troll.AbilityAttack(human);
                                 human.Info();
                                 troll.Info();
@@ -101,8 +105,32 @@ namespace vzaimod
                         ConsoleKeyInfo o = Console.ReadKey(intercept: true);
                         if(o.Key == ConsoleKey.O)
                         {
+                            Console.WriteLine("Нажмите 1 чтобы атаковать оружием нажмите 2 чтобы атаковать способностью");
+                            string three = Console.ReadLine();
+                            if(three == "1")
+                            {
+                                troll.Defense(warevolf);
+                                warevolf.WeaponsAttack(troll);
+                                warevolf.Info();
+                                troll.Info();
+                                if(troll.Health <= 0)
+                                {
+                                    break;
+                                }
+                            }
+                            if (three == "2")
+                            {
+                                troll.Defense(warevolf);
+                                warevolf.AbilityAttack(troll);
+                                warevolf.Info();
+                                troll.Info();
+                                if (troll.Health <= 0)
+                                {
+                                    break;
+                                }
 
-                            warevolf.WeaponsAttack(human);
+                            }
+                            
                         }
                     }
                 }

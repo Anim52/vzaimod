@@ -61,27 +61,32 @@ namespace vzaimod.Персонажи
         public void Defense(ICharacter target)
         {
             Random random = new Random();
-            if (random.NextDouble() < Weapons.DefenseChange)
+
+            double chance = random.Next(1, 41);
+
+
+            if (chance <= Weapons.DefenseChange)
             {
                 Console.WriteLine($"{Name} блокировал атаку от {target.Name}!");
-                target.Health -= Weapons.Damage * 2;
-                Console.WriteLine($"{target.Name} получает контратаку на {Weapons.Damage * 2} урона");
+                int counterAttackDamage = Weapons.Damage * 2;
+                target.Health -= counterAttackDamage;
+                Console.WriteLine($"{target.Name} получает контратаку на {counterAttackDamage} урона от {Name}.");
             }
             else
             {
-                Console.WriteLine($"{Name} не смог блокировать аттаку");
+                Console.WriteLine($"{Name} не смог блокировать атаку от {target.Name}.");
             }
         }
         public void Info()
         {
-            string st;
-            if (IsAlive = true)
-            {
-                st = "Живой";
-            }
-            else
+            string st = "";
+            if (health <= 0)
             {
                 st = "Мертв";
+            }
+            else if (health >0)
+            {
+                st = "Жив";
             }
             Console.WriteLine($"{Name} - Здорорвье:{Health},Cтамина:{Stamina},Энегрия:{Energy}, Статус:{st}");
         }
