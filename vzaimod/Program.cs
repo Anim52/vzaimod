@@ -49,6 +49,14 @@ namespace vzaimod
                             if(o.Key == ConsoleKey.O)
                             {
                                 axe.info();
+                                sword.info();
+                                bow.info();
+                            }
+                            Console.WriteLine("Чтобы просмотреть способности нажмить С");
+                            ConsoleKeyInfo c = Console.ReadKey(intercept: true);
+                            if (c.Key == ConsoleKey.C)
+                            {
+
                             }
                         }
                     }

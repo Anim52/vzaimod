@@ -32,5 +32,9 @@ namespace vzaimod.Характеристики
                 Console.WriteLine($"{target.Name} убит");
             }
         }
+        public void Info()
+        {
+            Console.WriteLine($"Название:{Title},Урон:{Damage},Энергия для использования:{EnergeCost},Шанс заблокировать атаку:{DefenseChange}");
+        }
     }
 }
